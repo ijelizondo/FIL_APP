@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        
+        versionCode="10" 
+        version   = "4.0.0">
+
+
+
+    <name>Biblio Blog</name>
+
+    <description>
+        Blog Biblioteca Campus Monterrey. 
+    </description>
+
+    <author href="http://biblioteca.mty.itesm.mx" email="ijelizondo@itesm.mx">
+        Tecnología e Innovación
+    </author>
+
+    <icon src="icons/Feed_128x128_b.png" />
+
+</widget>

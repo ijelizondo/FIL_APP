@@ -1,13 +1,7 @@
-
-
 //EDIT THESE LINES
 //Title of the blog
-var TITLE = "FIL MTY 2013";
+var TITLE = "AVISOS IMPORTANTES";
 //RSS url
-
-//var RSS = "http://feedproxy.google.com/RaymondCamdensColdfusionBlog";
-//var RSS = "http://biblioteca.mty.itesm.mx/rss.xml";
-
 var RSS = "http://biblioteca.mty.itesm.mx/mty/db/reports.php?base=mty_fil_avisos&report_id=3&accion=rss";
 //Stores entries
 var entries = [];
@@ -23,10 +17,19 @@ function renderEntries(entries) {
     $.each(entries, function(i, v) {
         //s += '<li><a href="#contentPage" class="contentLink" data-entryid="'+i+'">' + v.title + '</a></li>';
         s += '<li><a href="#contentPage" class="contentLink" data-entryid="'+i+'">' + v.content + '</a></li>';
-        
     });
     $("#linksList").html(s);
     $("#linksList").listview("refresh");
+}
+
+function checkCacheFalBack() {
+	if(localStorage["entries"]) {
+		$("#status").html("Usando versión local...");
+		entries = JSON.parse(localStorage["entries"]);
+		renderEntries(entries);
+	} else {
+		$("#status").html("Lo sentimos, no pudimos obtener los avisos y no existe versión local guardada.");
+	}
 }
 
 //Listen for Google's library to load
@@ -37,20 +40,13 @@ function initialize() {
 	$.mobile.showPageLoadingMsg();
 	feed.load(function(result) {
 		$.mobile.hidePageLoadingMsg();
-		console.dir(result);
 		if(!result.error) {
 			entries = result.feed.entries;
 			localStorage["entries"] = JSON.stringify(entries);
 			renderEntries(entries);
 		} else {
 			console.log("Error - "+result.error.message);
-			if(localStorage["entries"]) {
-				$("#status").html("Using cached version...");
-				entries = JSON.parse(localStorage["entries"]);
-				renderEntries(entries);
-			} else {
-				$("#status").html("Sorry, we are unable to get the RSS and there is no cache.");
-			}
+			checkCacheFalBack();
 		}
 	});
 }
@@ -60,7 +56,12 @@ $("#mainPage").live("pageinit", function() {
 	//Set the title
 	$("h1", this).text(TITLE);
 	
-	google.load("feeds", "1",{callback:initialize});
+	try {
+		google.load("feeds", "1",{callback:initialize});
+	} catch(e) {
+		console.log('Error - try to hit local cache');
+		checkCacheFalBack();
+	}
 });
 
 $("#mainPage").live("pagebeforeshow", function(event,data) {
@@ -73,10 +74,12 @@ $("#mainPage").live("pagebeforeshow", function(event,data) {
 //Listen for the content page to load
 $("#contentPage").live("pageshow", function(prepage) {
 	//Set the title
-	$("h1", this).text(entries[selectedEntry].title);
+	//$("h1", this).text(entries[selectedEntry].title);
+	$("h1", this).text("FIL MTY");
 	var contentHTML = "";
 	contentHTML += entries[selectedEntry].content;
-	contentHTML += '<p/><a href="'+entries[selectedEntry].link + '">Leer más en sitio de Biblioteca</a>';
+	contentHTML += '<br /><br /><a href="#mainPage" data-rel="back">Inicio</a>';
+	//contentHTML += '<p/><a href="'+entries[selectedEntry].link + '">Read Entry on Site</a>';
 	$("#entryText",this).html(contentHTML);
 });
 	

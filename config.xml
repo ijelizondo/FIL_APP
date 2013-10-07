@@ -7,16 +7,19 @@
 
 
 
-    <name>Biblio Blog</name>
+    <name>Feria Internacional del Libro Monterrey</name>
 
     <description>
-        Blog Biblioteca Campus Monterrey. 
+         Podrás consultar los avisos importantes de última hora, cambios de sala, horario, entre otra información sobre las
+          actividades del Programa Cultural de la Feria Internacional del Libro Monterrey. 
+          Los avisos aquí desplegados se actualiza constantemente, por lo que le sugerimos revisarlos frecuentemente para 
+          tener la información más reciente.
     </description>
 
     <author href="http://biblioteca.mty.itesm.mx" email="ijelizondo@itesm.mx">
         Tecnología e Innovación
     </author>
 
-    <icon src="icons/Feed_128x128_b.png" />
+    <icon src="icons/Feed_128x128_fil.png" />
 
 </widget>

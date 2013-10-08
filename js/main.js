@@ -1,6 +1,6 @@
 //EDIT THESE LINES
 //Title of the blog
-var TITLE = "AVISOS IMPORTANTES";
+var TITLE = "AVISOS";
 //RSS url
 var RSS = "http://biblioteca.mty.itesm.mx/mty/db/reports.php?base=mty_fil_avisos&report_id=3&accion=rss";
 //Stores entries
@@ -50,6 +50,8 @@ function initialize() {
 		}
 	});
 }
+
+
 
 //Listen for main page
 $("#mainPage").live("pageinit", function() {

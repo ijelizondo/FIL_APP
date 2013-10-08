@@ -52,7 +52,7 @@ function initialize() {
 }
 
 function openPDF() {
-     var ref = window.open('files/programa.pdf', '_blank', 'location=yes');
+     var ref = window.open(encodeURI('files/programa.pdf'), '_blank', 'location=yes');
      ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
      ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
      ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });

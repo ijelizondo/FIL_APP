@@ -21,5 +21,7 @@
     </author>
 
     <icon src="icons/Feed_128x128_fil.png" />
+    
+    <gap:plugin name="org.apache.cordova.core.inappbrowser" />
 
 </widget>

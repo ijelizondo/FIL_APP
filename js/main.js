@@ -2,7 +2,7 @@
 //Title of the blog
 var TITLE = "AVISOS";
 //RSS url
-var RSS = "http://biblioteca.mty.itesm.mx/mty/db/reports.php?base=mty_fil_avisos&report_id=3&accion=rss";
+var RSS = "http://biblioteca.mty.itesm.mx/mty/db/reports.php?base=mty_fil_avisos&report_id=3&accion=rss&bypass_cache=" + Math.floor(Date.now());
 //Stores entries
 var entries = [];
 var selectedEntry = "";
@@ -52,7 +52,7 @@ function initialize() {
 }
 
 function openPDF() {
-     var ref = window.open('https://docs.google.com/file/d/0B7hoXnCR0P9kY05CVzdLLVN0OU0/edit?usp=sharing', '_system', 'EnableViewPortScale=yes', 'location=yes');
+     var ref = window.open('http://fil.mty.itesm.mx/mty/ferialibro/program.pdf', '_system', 'EnableViewPortScale=yes', 'location=yes');
      //ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
      //ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
      //ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });

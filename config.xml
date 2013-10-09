@@ -22,5 +22,7 @@
 
     <icon src="icons/Feed_128x128_fil.png" />
     
+    <gap:splash src="files/splash.png" />
+    
 
 </widget>

@@ -52,7 +52,7 @@ function initialize() {
 }
 
 function openPDF() {
-     var ref = window.open('http://docs.google.com/viewer?url=http%3A%2F%2Ffil.mty.itesm.mx%2Fmty%2Fferialibro%2Fprograma.pdf', '_blank', 'EnableViewPortScale=yes', 'location=no');
+     var ref = window.open('https://docs.google.com/file/d/0B7hoXnCR0P9kY05CVzdLLVN0OU0/edit?usp=sharing', '_blank', 'EnableViewPortScale=yes', 'location=yes');
      //ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
      //ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
      //ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });

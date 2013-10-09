@@ -52,7 +52,7 @@ function initialize() {
 }
 
 function openPDF() {
-     var ref = window.open('https://docs.google.com/file/d/0B7hoXnCR0P9kY05CVzdLLVN0OU0/edit?usp=sharing', '_blank', 'EnableViewPortScale=yes', 'location=yes');
+     var ref = window.open('https://docs.google.com/file/d/0B7hoXnCR0P9kY05CVzdLLVN0OU0/edit?usp=sharing', '_system', 'EnableViewPortScale=yes', 'location=yes');
      //ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
      //ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
      //ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
